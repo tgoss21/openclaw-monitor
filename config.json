@@ -1,0 +1,46 @@
+{
+  "watchlist": ["AAPL", "NVDA", "TSLA", "AMZN", "META", "GOOGL", "SPY", "QQQ", "MU"],
+  "thresholds": {
+    "priceChangePct": 2.0,
+    "volumeSpikeMultiplier": 2.0,
+    "rsiOverbought": 70,
+    "rsiOversold": 30,
+    "nearStopLossPct": 2.0,
+    "nearTargetPct": 2.0,
+    "maShortPeriod": 9,
+    "maLongPeriod": 21,
+    "goldenDeathCrossShort": 50,
+    "goldenDeathCrossLong": 200
+  },
+  "schedule": {
+    "checkIntervalMs": 300000,
+    "marketOpen": "09:30",
+    "marketClose": "16:00",
+    "timezone": "America/New_York",
+    "tradingDaysOnly": true
+  },
+  "api": {
+    "provider": "alpaca",
+    "baseUrl": "https://data.alpaca.markets",
+    "feed": "iex",
+    "maxRequestsPerMinute": 200
+  },
+  "paths": {
+    "alertFile": "./shared/alerts.md",
+    "watchlistFile": "./shared/watchlist.md",
+    "chartOutputDir": "./shared/charts/",
+    "chartGenerator": "./chart-generator.py",
+    "logFile": "./monitor.log"
+  },
+  "chartDefaults": {
+    "period": "3mo",
+    "interval": "1d",
+    "width": 1200,
+    "height": 800
+  },
+  "alerts": {
+    "dedupeWindowMs": 1800000,
+    "maxAlertsPerTicker": 3,
+    "priorityOrder": ["nearStopLoss", "nearTarget", "maCross", "volumeSpike", "rsi", "priceChange"]
+  }
+}

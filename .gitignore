@@ -1,0 +1,9 @@
+node_modules/
+venv/
+.env
+monitor.log
+shared/charts/*.png
+shared/alerts.md
+__pycache__/
+*.pyc
+.DS_Store

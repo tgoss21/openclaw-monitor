@@ -1,0 +1,18 @@
+{
+  "name": "openclaw-market-monitor",
+  "version": "1.0.0",
+  "description": "Lightweight event-driven market monitor for OpenClaw stock agents (no LLM)",
+  "main": "monitor.js",
+  "scripts": {
+    "start": "node monitor.js",
+    "test": "node monitor.js --test",
+    "chart": "python3 chart-generator.py"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0",
+    "dotenv": "^16.4.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
